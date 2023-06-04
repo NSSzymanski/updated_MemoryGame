@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>Tarot Memory Card Game</header>
+    <!-- header/nav not centered in small displays-->
+    <nav>
+      <button id="start-btn" onclick="start()">START</button>
+      <!--make start button initiate game/timer-->
+      <button id="instructions">INSTRUCTIONS</button>
+      <!--make pop up for instructions-->
+      <dialog id="instructions-dialog">
+        <p>
+          To play the game a player must match two tarot cards together. Once
+          the tarot cards have been matched they will be removed off the board.
+          A player must match all remaining tarot cards before time is up.
+          Goodluck!
+        </p>
+        <form method="dialog">
+          <button id="exit-dlg">Got it!</button>
+        </form>
+      </dialog>
+      <div id="countdown">30</div>
+    </nav>
+    <!--make start button initiate game-->
+    <!--timer keeps going once clicked, how to restart if anything else is clicked-->
+    <!--make timer do thing-->
+    <main>
+      <!--deck not minimizing with smaller displays-->
+      <div class="deck">
+        <!--need to figure out reverse side images-->
+        <!-- randomizing/animating cards to flip-->
+        <div class="card" data-name="empress">
+          <img class="front-face" src="the empress.jpg" alt="empress-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="priestess">
+          <img
+            class="front-face"
+            src="the high priestess.jpg"
+            alt="high priestess-tarot"
+          />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="moon">
+          <img class="front-face" src="the moon.jpg" alt="moon-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="star">
+          <img class="front-face" src="the star.jpg" alt="star-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="judgement">
+          <img class="front-face" src="judgement.jpg" alt="judgement-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="sun">
+          <img class="front-face" src="the sun.jpg" alt="sun-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="empress">
+          <img class="front-face" src="the empress.jpg" alt="empress-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="priestess">
+          <img
+            class="front-face"
+            src="the high priestess.jpg"
+            alt="high priestess-tarot"
+          />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="moon">
+          <img class="front-face" src="the moon.jpg" alt="moon-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="star">
+          <img class="front-face" src="the star.jpg" alt="star-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="judgement">
+          <img class="front-face" src="judgement.jpg" alt="judgement-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+        <div class="card" data-name="sun">
+          <img class="front-face" src="the sun.jpg" alt="sun-tarot" />
+          <img class="back-face" src="backcard.webp" alt="tarot-back" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <input id="reset" type="button" value="Refresh" onclick="refresh(this)" />
+      <!--prompt of good job or try again-->
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
