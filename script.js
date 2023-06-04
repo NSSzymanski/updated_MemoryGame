@@ -1,3 +1,5 @@
+const startGame = document.getElementById("start-btn");
+
 function start() {
   let counter = 30;
   setInterval(function () {
@@ -82,7 +84,9 @@ function flipTheCard() {
   }
 }
 
-cards.forEach((card) => card.addEventListener("click", flipTheCard));
+startGame.addEventListener("click", () => {
+  cards.forEach((card) => card.addEventListener("click", flipTheCard));
+});
 
 function randomize() {
   cards.forEach((card) => {
@@ -92,3 +96,11 @@ function randomize() {
 }
 
 randomize();
+
+//restart button
+
+const resetBoard = document.getElementById("reset");
+
+resetBoard.addEventListener("click", () => {
+  window.location.reload();
+});
