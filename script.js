@@ -17,7 +17,6 @@ function start() {
       alert("You matched them all! It took you " + counter + " seconds");
     }
   }, 1000);
-  //insert game initiation code here
 }
 
 const instructionsButton = document.getElementById("instructions");
@@ -63,14 +62,6 @@ startGame.addEventListener("click", () => {
   cards.forEach((card) => card.addEventListener("click", flipTheCard));
 });
 
-// function gameCompletion() {
-//   if (matches === 6) {
-//     alert("congrats! You macthed em all");
-//   }
-// }
-
-// gameCompletion();
-
 function randomize() {
   cards.forEach((card) => {
     let randomPosition = Math.floor(Math.random() * 12);
@@ -80,37 +71,8 @@ function randomize() {
 
 randomize();
 
-//game's done when matches equals 6
-
-// function gameCompletion() {
-//   if (matches === 6) {
-//     console.log("congrats, you matched em all!");
-//   } else {
-//     console.log("dang slow-poke, better luck next time");
-//   }
-// }
-
-// gameCompletion();
-
-//restart button
-
 const resetBoard = document.getElementById("reset");
 
 resetBoard.addEventListener("click", () => {
   window.location.reload();
 });
-
-//count matches made
-
-// let matches = 0;
-
-// function countMatches() {
-//   if ((cardOne.dataset.name === cardTwo.dataset.name) === true) {
-//     matches++;
-//     console.log(matches);
-//   } else {
-//     console.log("not a match");
-//   }
-// }
-
-// countMatches();

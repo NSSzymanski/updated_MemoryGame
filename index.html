@@ -14,14 +14,12 @@
   </head>
   <body>
     <header>Tarot Memory Card Game</header>
-    <!-- header/nav not centered in small displays-->
     <nav>
       <div class="startContainer">
         <button id="start-btn" onclick="start()">START</button>
         <button id="instructions">RULES</button>
       </div>
       <button id="reset" onlick="refreshPage">RESET</button>
-      <!--make pop up for instructions-->
       <dialog id="instructions-dialog">
         <p>
           To play the game a player must match two tarot cards together. Once
@@ -35,15 +33,9 @@
       </dialog>
       <div id="countdown">0</div>
     </nav>
-    <!--make start button initiate game-->
-    <!--timer keeps going once clicked, how to restart if anything else is clicked-->
-    <!--make timer do thing-->
     <main>
-      <!--deck not minimizing with smaller displays-->
       <section class="gameContainer">
         <div class="deck">
-          <!--need to figure out reverse side images-->
-          <!-- randomizing/animating cards to flip-->
           <div class="card" data-name="empress">
             <img class="front-face" src="the empress.jpg" alt="empress-tarot" />
             <img class="back-face" src="backcard.webp" alt="tarot-back" />

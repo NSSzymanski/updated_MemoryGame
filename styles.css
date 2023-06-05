@@ -2,8 +2,6 @@ body {
   background-image: url("pexels-pixabay-2150.jpg");
 }
 
-/**header text not center on smaller displays**/
-
 header {
   font-family: "IM Fell English SC", serif;
   color: white;
@@ -68,13 +66,6 @@ dialog {
   font-weight: bold;
 }
 
-footer {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center; */
-}
-
 .deck {
   width: 350px;
   height: 350px;
@@ -124,9 +115,6 @@ footer {
 .front-face {
   transform: rotateY(180deg);
 }
-
-/**.card.hide {
-    transform: scale(0); /shrink to hide **/
 
 .instructions {
   display: flex;
@@ -180,7 +168,7 @@ footer {
     border-color: gold;
     background-color: #f2f2f2;
     color: #271359;
-    /* align-items: center; */
+
     width: 140px;
   }
 
@@ -215,6 +203,4 @@ footer {
     margin-top: 0%;
     padding-top: 0%;
   }
-
-  /** for desktop **/
 }
