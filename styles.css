@@ -7,8 +7,12 @@ body {
 header {
   font-family: "IM Fell English SC", serif;
   color: white;
-  font-size: 45px;
+  font-size: 30px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  margin-left: 10%;
 }
 
 nav {
@@ -16,17 +20,26 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-left: 10%;
+}
+
+.startContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 button {
+  display: flex;
+  justify-content: center;
   padding: 8px;
+  margin: 5px;
   border-radius: 14px;
   border-color: gold;
   background-color: #f2f2f2;
   color: #271359;
-  align-items: center;
-  width: 150px;
-  justify-content: center;
+  /* align-items: center; */
+  width: 70px;
 }
 
 #reset {
@@ -36,7 +49,7 @@ button {
   background-color: #f2f2f2;
   color: #271359;
   align-items: center;
-  width: 150px;
+  width: 100px;
   justify-content: center;
 }
 
@@ -56,20 +69,25 @@ dialog {
 }
 
 footer {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
 }
 
 .deck {
-  width: 640px;
-  height: 640px;
+  width: 350px;
+  height: 350px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   perspective: 1000px;
   border-color: antiquewhite;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0%;
 }
 
 .card {
@@ -118,7 +136,7 @@ footer {
 
 #countdown {
   margin-top: 8px;
-  font-size: 50px;
+  font-size: 30px;
   color: white;
   border: 2px solid gold;
   border-radius: 20px;
@@ -127,12 +145,74 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
-  #deck {
-    position: center;
+  body {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    padding-top: 0px;
+    margin-top: 0px;
   }
 
   header {
     font-size: 80px;
+    margin-left: 5%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 14px;
+    border-color: gold;
+    background-color: #f2f2f2;
+    color: #271359;
+    /* align-items: center; */
+    width: 140px;
+  }
+
+  #countdown {
+    margin-top: 8px;
+    font-size: 50px;
+    color: white;
+    border: 2px solid gold;
+    border-radius: 20px;
+    padding: 5px;
+    align-items: center;
+  }
+
+  .gameContainer {
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: 15%;
+  }
+
+  .deck {
+    position: center;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    border-color: antiquewhite;
+    border-radius: 5px;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    padding-top: 0%;
   }
 
   /** for desktop **/

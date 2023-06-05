@@ -1,19 +1,23 @@
 const startGame = document.getElementById("start-btn");
 
+let counter = 0;
+
 function start() {
-  let counter = 30;
   setInterval(function () {
-    counter--;
-    if (counter >= 0) {
+    counter++;
+    if (counter <= 100) {
       span = document.getElementById("countdown");
       span.innerHTML = counter;
     }
-    if (counter === 0) {
-      alert("Time's Up");
+    if (counter === 100) {
+      alert("Game over! Sorry slow-poke, better luck next time");
       clearInterval(counter);
     }
+    if (matches === 6) {
+      alert("You matched them all! It took you " + counter + " seconds");
+    }
   }, 1000);
-  //insert code on allowing came to be initiated here
+  //insert game initiation code here
 }
 
 const instructionsButton = document.getElementById("instructions");
@@ -22,45 +26,12 @@ const instructionsDialog = document.getElementById("instructions-dialog");
 instructionsButton.addEventListener("click", () => {
   instructionsDialog.showModal();
 });
-// make cards, flip them, randomize them
-
-// let frontOfCard = () => [
-//   { value: "1", image: "./images.judgement.jpg" },
-//   { value: "1", image: "./images.judgement.jpg" },
-//   { value: "2", image: "./images.the-empress.jpg" },
-//   { value: "2", image: "./images.the-empress.jpg" },
-//   { value: "3", image: "./images.the-high-priestess.jpg" },
-//   { value: "3", image: "./images.the-high-priestess.jpg" },
-//   { value: "4", image: "./images.the-moon.jpg" },
-//   { value: "4", image: "./images.the-moon.jpg" },
-//   { value: "5", image: "./images.the-sun.jpg" },
-//   { value: "4", image: "./images.the-sun.jpg" },
-//   { value: "6", image: "./images.the-star.jpg" },
-//   { value: "4", image: "./images.the-star.jpg" },
-// ];
-
-// let showFront = document.getElementsByClassName("front-face");
-// showFront.addEventListener("click", () => {
-// })
-// //function handleCardClick(card) {
-//   //  if (shouldMoveCardOff(card)) {
-//     //    MoveCardOff(card);
-//}
-//}
-
-//function shouldMoveCardOff(card) {
-// if pair match card if found return true otherwise false
-//}
-
-//function MoveCardOff(card) {
-// add hid class to the card
-//  card.classList.add('hide');
-//}
 
 const cards = document.querySelectorAll(".card");
 
 let cardWasFlipped = false;
 let cardOne, cardTwo;
+let matches = 0;
 
 function flipTheCard() {
   this.classList.toggle("flip");
@@ -75,6 +46,10 @@ function flipTheCard() {
     if (cardOne.dataset.name === cardTwo.dataset.name) {
       cardOne.removeEventListener("click", flipTheCard);
       cardTwo.removeEventListener("click", flipTheCard);
+      cardOne.style.opacity = "0";
+      cardTwo.style.opacity = "0";
+      matches++;
+      console.log(matches);
     } else {
       setTimeout(() => {
         cardOne.classList.remove("flip");
@@ -88,6 +63,14 @@ startGame.addEventListener("click", () => {
   cards.forEach((card) => card.addEventListener("click", flipTheCard));
 });
 
+// function gameCompletion() {
+//   if (matches === 6) {
+//     alert("congrats! You macthed em all");
+//   }
+// }
+
+// gameCompletion();
+
 function randomize() {
   cards.forEach((card) => {
     let randomPosition = Math.floor(Math.random() * 12);
@@ -97,6 +80,18 @@ function randomize() {
 
 randomize();
 
+//game's done when matches equals 6
+
+// function gameCompletion() {
+//   if (matches === 6) {
+//     console.log("congrats, you matched em all!");
+//   } else {
+//     console.log("dang slow-poke, better luck next time");
+//   }
+// }
+
+// gameCompletion();
+
 //restart button
 
 const resetBoard = document.getElementById("reset");
@@ -104,3 +99,18 @@ const resetBoard = document.getElementById("reset");
 resetBoard.addEventListener("click", () => {
   window.location.reload();
 });
+
+//count matches made
+
+// let matches = 0;
+
+// function countMatches() {
+//   if ((cardOne.dataset.name === cardTwo.dataset.name) === true) {
+//     matches++;
+//     console.log(matches);
+//   } else {
+//     console.log("not a match");
+//   }
+// }
+
+// countMatches();
